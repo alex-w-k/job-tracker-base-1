@@ -56,4 +56,5 @@ describe 'User sees specific job with all associated tags' do
     expect(page).to have_content('10')
     expect(page).to have_content('Tags: Good-Location - 2, Low-Paying - 1')
   end
+
 end

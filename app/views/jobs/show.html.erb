@@ -14,3 +14,4 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <br>
 
 Tags: <% @job.tags.each do |tag| %> <%= tag.title %> - <%= tag.jobs.count %><%= ', ' unless tag == @job.tags.last  %><% end %>
+
