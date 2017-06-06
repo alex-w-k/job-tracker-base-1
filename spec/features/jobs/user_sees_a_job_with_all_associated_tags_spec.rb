@@ -57,4 +57,13 @@ describe 'User sees specific job with all associated tags' do
     expect(page).to have_content('Tags: Good-Location - 2, Low-Paying - 1')
   end
 
+  scenario 'a user sees something when a job has no tags' do
+    company = Company.create(name: 'Test Company')
+    job = company.jobs.create(title: 'Developer', level_of_interest: 70, city: 'Denver')
+
+    visit company_job_path(company, job)
+
+    expect(page).to have_content('Tags: This job has no tags 😭')
+  end
+
 end
