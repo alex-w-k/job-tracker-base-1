@@ -7,7 +7,6 @@ describe "User sees a specific job" do
 
     visit company_job_path(company, job)
 
-    save_and_open_page
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Developer")
     expect(page).to have_content("70")
