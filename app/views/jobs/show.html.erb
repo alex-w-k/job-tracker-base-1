@@ -11,3 +11,4 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+Tags: <%= @job.tags.first.title %> - <%= @job.tags.first.jobs.count %>
