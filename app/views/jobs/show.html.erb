@@ -12,6 +12,8 @@ City: <%= @job.city %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <br>
-
-Tags: <% @job.tags.each do |tag| %> <%= tag.title %> - <%= tag.jobs.count %><%= ', ' unless tag == @job.tags.last  %><% end %>
-
+<% if @job.tags.count > 0 %>
+  Tags: <% @job.tags.each do |tag| %> <%= tag.title %> - <%= tag.jobs.count %><%= ', ' unless tag == @job.tags.last  %><% end %>
+<% else %>
+  Tags: This job has no tags 😭
+<% end %>
